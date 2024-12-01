@@ -1,22 +1,5 @@
 # Circadian
 
-## Display logic
+Circadian is a web app that allows you to monitor the health of your endpoints in real-time. It is built using the [Echo](https://echo.labstack.com/) framework and [Go](https://go.dev/). It is a simple and easy to use tool that allows you to monitor the health of your endpoints in real-time.
 
-- Uptime
- (Interval of callout) * (Number of 50x) / 1440
 
- 100 - (1 * 60 / 1440)
-
- ## Latency
-
- Total latency / Number of callouts
-
- ## Outage duration per day
-Minutes of outage = (Interval of callout) * (Number of 50x) 
-
-7:00AM - 200
-7:01AM - 500
-7:25AM - 200
-8:00AM - 200
-
-1*1 = 1
