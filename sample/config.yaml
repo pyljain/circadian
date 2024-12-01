@@ -1,0 +1,44 @@
+targets:
+- name: Anthropic
+  url: https://api.anthropic.com/v1/messages
+  method: POST
+  headers:
+    "Content-Type": "application/json"
+    "X-Api-Key": $ANTHROPIC_API_KEY
+  body: |
+    {
+      "model": "claude-3-5-sonnet-20241022",
+      "max_tokens": 1024,
+      "messages": [
+          {"role": "user", "content": "Hello, world"}
+      ]
+    }
+  interval: 60
+  expected_latency: 1000
+- name: OpenAI
+  url: https://api.openai.com/v1/chat/completions
+  method: POST
+  headers:
+    "Content-Type": "application/json"
+    "Authorization": "Bearer $OPENAI_API_KEY"
+  body: |
+    {
+      "model": "gpt-3.5-turbo",
+      "messages": [{"role": "user", "content": "Hello, world"}]
+    }
+  interval: 120
+  expected_latency: 1000
+- name: Google
+  url: https://google.com
+  method: GET
+  interval: 50000
+  headers: {}
+  body: ""
+  expected_latency: 1000
+- name: Citi
+  url: https://citi.com
+  method: GET
+  headers: {}
+  body: ""
+  interval: 50000
+  expected_latency: 1000
